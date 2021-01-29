@@ -1,0 +1,12 @@
+<div *ngIf="!isSignedIn" class="container">
+  <form class="login">
+    <img class="logo" src="../../assets/img/reg.png" />
+    <input type="text" placeholder="Enter email" #emailSignup>
+    <input type="password" placeholder="Enter Password" #passwordSignup>
+    <button (click)="onSignup(emailSignup.value, passwordSignup.value)">Registration</button>
+    <a [routerLink]=" [ '/']" >Back</a>
+  </form>
+
+
+</div>
+<app-home *ngIf="isSignedIn" (isLogout)="handleLogout()"></app-home>

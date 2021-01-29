@@ -5,10 +5,6 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire';
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatCardModule} from '@angular/material/card';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
 import {FormsModule} from '@angular/forms';
 import { FirebaseService } from './services/firebase.service';
 import { HomeComponent } from './home/home.component';
@@ -40,10 +36,6 @@ const appRoutes: Routes = [
     RouterModule,
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
-    MatCardModule,
-    MatTabsModule,
-    MatInputModule,
-    MatButtonModule,
     FormsModule,
   ],
   providers: [FirebaseService],
