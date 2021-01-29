@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDatepickerToggle } from '@angular/material/datepicker';
+import { FormsModule } from '@angular/forms' ;
+
 
 @Component({
   selector: 'app-lisaa-tapahtuma',
@@ -6,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lisaa-tapahtuma.component.css']
 })
 export class LisaaTapahtumaComponent implements OnInit {
+
 
   constructor() { }
 
