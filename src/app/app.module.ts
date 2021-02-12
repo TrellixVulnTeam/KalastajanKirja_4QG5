@@ -5,10 +5,14 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire';
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FirebaseService } from './services/firebase.service';
 import { HomeComponent } from './home/home.component';
 import { RegistrationComponent } from './registration/registration.component';
+import {AngularFirestoreModule} from "@angular/fire/firestore";
+import {AngularFireAuthModule} from "@angular/fire/auth";
+import {AngularFireStorageModule} from "@angular/fire/storage";
+import { environment } from '../environments/environment';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent},
@@ -21,22 +25,19 @@ const appRoutes: Routes = [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    RegistrationComponent
+    RegistrationComponent,
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp({
-      apiKey: "AIzaSyBVJQ8tXHI9gaVw7MqCeKn_rx6j4G3mS5E",
-      authDomain: "angular-firebase-auth-bc.firebaseapp.com",
-      projectId: "angular-firebase-auth-bc",
-      storageBucket: "angular-firebase-auth-bc.appspot.com",
-      messagingSenderId: "976613960319",
-      appId: "1:976613960319:web:a3cd0d4c717d55b3e96d4a"
-    }),
+    AngularFireModule.initializeApp(environment.firebaseConfig, 'angular-firebase-auth-bc'),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule,
     RouterModule,
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent]

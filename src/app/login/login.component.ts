@@ -8,9 +8,12 @@ import { FirebaseService } from '../services/firebase.service';
 })
 export class LoginComponent implements OnInit {
   isSignedIn = false;
+
   constructor(public firebaseService: FirebaseService){}
 
   ngOnInit() {
+
+
     if (localStorage.getItem('user') !== null){
       this.isSignedIn = true;
     }else{
@@ -32,4 +35,6 @@ export class LoginComponent implements OnInit {
   handleLogout(){
     this.isSignedIn = false;
   }
+
 }
+

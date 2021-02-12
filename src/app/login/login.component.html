@@ -1,26 +1,11 @@
 <div *ngIf="!isSignedIn" class="container">
   <form class="login">
     <img class="logo" src="../../assets/img/login.svg" />
-    <input class="username" type="text" placeholder="Enter email" #email required>
-    <input class="password" type="password" placeholder="Enter Password" #password required>
-    <button (click)="onSignin(email.value, password.value)">Sign in</button>
+    <input class="username" type="email" placeholder="Enter email" formControlName="email" #email required>
+    <input class="password" type="password" placeholder="Enter Password" formControlName="password" #password required>
+    <button type="submit" (click)="onSignin(email.value, password.value)">Sign in</button>
     <a routerLink="/registration" routerLinkActive="active">or registration</a>
   </form>
 </div>
 <app-home *ngIf="isSignedIn" (isLogout)="handleLogout()"></app-home>
 
-<!--<div *ngIf="!isSignedIn">-->
-<!--  <h2>Sign up</h2>-->
-<!--  <input type="text" #emailSignup>-->
-<!--  <input type="text" #passwordSignup>-->
-<!--  <button (click)="onSignup(emailSignup.value, passwordSignup.value)">Sign up</button>-->
-<!--</div>-->
-<!--<hr>-->
-<!--<div *ngIf="!isSignedIn">-->
-<!--  <h2>Sign in</h2>-->
-<!--  <input type="text" #email>-->
-<!--  <input type="text" #password>-->
-<!--  <button (click)="onSignin(email.value, password.value)">Sign in</button>-->
-<!--</div>-->
-
-<!--<app-home *ngIf="isSignedIn" (isLogout)="handleLogout()"></app-home>-->
